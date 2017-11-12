@@ -1,0 +1,8 @@
+{
+  "concurrency": 4,
+  "destBucket": "prodbucket",
+  "sizes": {
+    "offer": { "small": "200x100,!", "medium": "360", "large": "750" },
+    "seller": { "mini_avatar": "30", "thumb": "100x100,!" }
+  }
+}

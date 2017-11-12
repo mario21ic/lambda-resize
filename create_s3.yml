@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    domain: mydomain
+    env: dev
+    bucket: "{{ env }}.e.{{ domain }}"
+    region: us-west-2
+  tasks:
+  - name: create an input s3 bucket
+    local_action:
+      module: s3
+      bucket: "{{ bucket }}"
+      region: "{{ region }}"
+      mode: create
+  - name: create the directory store
+    local_action:
+      module: s3
+      bucket: "{{ bucket }}"
+      object: /store/
+      bucket: "{{ bucket }}"
+      region: "{{ region }}"
+      mode: create
